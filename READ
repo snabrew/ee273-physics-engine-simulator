@@ -8,14 +8,17 @@ the objects according to the applied forces and constraints.
 
 Code will focus on RIGID BODY PHYSICS. 
 
-
+Call certain simulation - prompts to show what kind of simulation the user wants  ( Do you want to add slopes? y/n : ) or ( Load : slopes, Field, Hills : ) 
 
 User inputs;
--number of objects, properties of these objects ( scale, position, elasticity(TBD) )
--forces ,  ( Apply force - xN in direction ( x* , y* , z* ) ,( center of mass or point on surface? ) )
+prompt:
+-number of objects, properties of these objects ( scale, position, elasticity(TBD) ) -> Randomise properties? 
+-forces ,  ( Apply force - xN in direction ( x* , y* , z* ) ,( center of mass or point on surface? ) ) 
+
 -trigger, ( the start button, program will continue until user will tell it to stop ( No Pause button) )
 Condition:
--No interactions ffrom user while the code is running
+-No interactions ffrom user while the code is running ( MAYBE CLICKS?)
+
 
 
 Output;
