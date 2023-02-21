@@ -27,9 +27,27 @@ Output;
 
 
 
+what we need to code;
+-collision detection, 
+          software just detects whether the object was in contact. (Decides when to apply force between 2 objects)
+-collision response,
+          what is being called by collision detection. 
+-Rigid Body functions, 
+          handling (mass, position, linear velocity, rotational velocity),  impulse (change in momentum) 
+          handling geometry and how to determine the interaction between them. 
+          
 
-collision detection, software just detects whether the object was in contact. 
-                     (Decides when to apply force between 2 objects)
-                     
-                     
+-GUI ,
+           How to render the elements in conduction. 
+           
+
+-data types and data handling. 
+           classes and what is required, structures and vectors to store information. 
+           e.g. Rigid body class that cube and sphere class can inherit from. 
+                Associated classes that contain the code on how to alter these values. 
+           
+
+
+
+
                      
