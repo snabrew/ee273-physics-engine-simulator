@@ -1,1 +1,8 @@
-here
+14 Physics Engine Simulator
+Write a simulator for physics, like a game may have. Create virtual objects and apply forces
+and constraints to them, such as gravity, friction, and collision detection, and initial vector
+of motion. Generate a visual representation of the system and simulate the movement of
+the objects according to the applied forces and constraints.
+
+
+
