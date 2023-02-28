@@ -1,1 +1,65 @@
+Output;
+- Visual window ( objects rendered in its projection)
+- No statistics (Starting Position, Final position) 
 
+
+
+what we need to code;
+-collision detection, 
+          software just detects whether the object was in contact. (Decides when to apply force between 2 objects)
+-collision response,
+          what is being called by collision detection. 
+-Rigid Body functions, 
+          handling (mass, position, linear velocity, rotational velocity),  impulse (change in momentum) 
+          handling geometry and how to determine the interaction between them. 
+          Timesteps and how this code should run over a certain amount of time. 
+
+-GUI ,
+           How to render the elements in conduction. 
+           
+-Text based initialisation, 
+           Used to select and create the initial values the code is being run from. ( Gravity, How many objects, what forces are being applied to the shapes)
+           
+-data types and data handling. 
+           classes and what is required, structures and vectors to store information. 
+           e.g. Rigid body class that cube and sphere class can inherit from. 
+                Associated classes that contain the code on how to alter these values. 
+
+Data types:
+Class;
+  Vector:
+    - will have (x,y,z) values 
+    - will contain operators to run the calculation required between vectors.
+    
+   Object:
+    - point mass
+        will contain the information associated with a point mass
+    - Sphere
+        will contain the information to form a sphere geometry of a sphere.
+    - Cube
+        will contain the information to form a cube. 
+ 
+Collision detection:
+  -Be able to detect when 2 objects are in contact.
+
+Collision response:
+  -Be able to call the functions that are required between the 2 objects
+	-be able to contain all the getters and setters for each object. (to alter vector values)
+
+GUI:
+	- Be able to display the simulation.
+
+Text based initialiser:
+	-Be able to take user input and determine what values to apply for the simulation. (hwo many objects
+	-Be able to trigger the simulation
+	
+	-Be able to deallocate all allocated memory and end the code. 
+	
+Testing
+test the individual modules that run the code itself, 
+          Test functions that shows what real physics should be in numerical values of the output,
+          Logs and outputs that would reflect real world physics being simulated.
+          
+          Stress testing and look at what can be altered to gain more performance out of a certain function.
+
+  
