@@ -17,7 +17,7 @@ Vector3 normal (Vector3 force, Vector3 norm){
 }
 
 Vector3 weight ( point_mass* p){
-    Vector3 g{0,0,-9.81};
+    Vector3 g{0,-9.81,0};
     //assigning gravity, we can change this to mess with gravity? (create a scene class for these numbers maybe?
     return g * (p->getMass()) ;
 }
