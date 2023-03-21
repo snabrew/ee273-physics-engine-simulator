@@ -11,7 +11,7 @@ Vector3 normal (Vector3 force, Vector3 norm){
     un.normalise();
     
     float m = uF.dot(un);
-    //normalised dot products are basically cos theta.
+    //normalised dot products are basically cos theta. (so the component that is along the axis of normal is taken into account.)
     
     return force * m;
 }
@@ -23,11 +23,10 @@ Vector3 weight ( point_mass* p){
 }
 
 Vector3 friction ( float coef,Vector3 norm,Vector3 vel){
-    Vector3 dir = -1 * vel.normalise();
-    Vector3 ff = coef * norm;
-    ff = ff.magnitude() * dir;
+    Vector3 dir = -1 * vel.normalise(); //creating directional vector for friction. (opposite velocity as friction opposes movement. )
+    Vector3 ff = coef * norm.magnitude(); // magnitude of friction. ( A coefficient of friction is set) 
     
-    return ff;
+    return ff * dir; //new vector with direction opposite velocity.
 }
 
 
