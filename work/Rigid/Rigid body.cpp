@@ -12,8 +12,8 @@ Vector3 normal (Vector3 force, Vector3 norm){
     
     float m = uF.dot(un);
     //normalised dot products are basically cos theta. (so the component that is along the axis of normal is taken into account.)
-    
-    return force * m;
+    out = (force * m).magnitude() * un
+    return out;
 }
 
 Vector3 weight ( point_mass* p){
