@@ -22,7 +22,8 @@ public:
     float getRadius();
     void setreference();
     
-
+    /* draw position */
+    Vector3 drawposition ();
     /* collisions */
     /* detection between cube and ground */
     bool detect(float ground);

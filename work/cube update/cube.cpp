@@ -13,12 +13,25 @@ cube::cube(Vector3 p, Vector3 v, Vector3 a, float m, float r) :
 void cube::setRadius(float r) {
     this->radius = r;
     length = r/1.732;
+    
 }
+
 float cube::getRadius() {
     return radius;
 }
+
+Vector3 cube::drawposition (){
+    
+    Vector3 radiusv {length/2,length/2,length/2};
+    
+    Vector3 dpos = position - radiusv;
+    //GLUT draws a cube from the bottm left corner, where the code assumes position is in the center.
+    // this affects position before the simulation is run so the user will not see this.
+    return dpos;//returns a vector that replaces position when drawn.
+}
+
 void cube::setreference(){
-    const Vector3 ndefinition[6] = {Vector3(1,0,0),Vector3(-1,0,0),Vector3(0,1,0),Vector3(0,-1,0),Vector3(0,0,1),Vector3(0,0,-1)};
+    const Vector3 ndefinition[6] = {Vector3(1,0,0),Vector3(-1,0,0),Vector3(0,1,0),Vector3(0,-1,0),Vector3(0,0,1),Vector3(0,0,-1)}; // normals of a cube defined
     
     for (int i = 0; i < 6; i++){
         normals.push_back(ndefinition[i]);
@@ -53,6 +66,7 @@ bool cube::detect(sphere& s2) {
         else if (ndot < 0.5){
             colr = radius;
         }
+        // checking whether direction of  distance vector is along the normal or the vertices to determine the collision radius so that it is represented as a sphere
     }
     
     
