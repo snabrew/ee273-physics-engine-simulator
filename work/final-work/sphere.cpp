@@ -1,5 +1,3 @@
-#include "Vector3.h"
-#include "point_mass.h"
 #include "sphere.h"
 
 sphere::sphere() : point_mass(), radius(0.0f) {}
