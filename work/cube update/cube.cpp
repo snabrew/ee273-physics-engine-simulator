@@ -21,13 +21,46 @@ float cube::getRadius() {
 }
 
 Vector3 cube::drawposition (){
+    const int test1 = 1;
+    const int test2 = 1;
     
-    Vector3 radiusv {length/2,length/2,length/2};
-    
-    Vector3 dpos = position - radiusv;
+    Vector3 radiusv {};
+    Vector3 dpos {};
+    switch (test1){
+            /* one of these should work if not then choose 3 4 5 to show which axis is y or z  and let me know*/
+        case 1:
+            radiusv = Vector3(length/2,length/2,-length/2);
+            break;
+        case 2:
+            radiusv = Vector3(length/2,-length/2,length/2);
+            break;
+            /* chcks for which axis is x y and z.*/
+        case 3:
+            radiusv = Vector3(1,0,0);
+            break;
+        case 4:
+            radiusv = Vector3(0,1,0);
+            break;
+        case 5:
+            radiusv = Vector3(0,0,1);
+            break;
+            
+            
+    }
+    switch (test2){
+            /* test to see whether if were wrong in adding or subtracting. (pretty sure its subtracting.)*/
+        case 1:
+            dpos = position - radiusv;
+            break;
+            
+        case 2:
+            dpos = position + radiusv;
+            break;
+    }
     //GLUT draws a cube from the bottm left corner, where the code assumes position is in the center.
     // this affects position before the simulation is run so the user will not see this.
-    return dpos;//returns a vector that replaces position when drawn.
+    
+    return dpos; //returns a vector that replaces position when drawn.
 }
 
 void cube::setreference(){
