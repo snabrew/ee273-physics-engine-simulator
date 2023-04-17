@@ -8,6 +8,7 @@ using namespace std;
 int main()
 {
     vector<sphere*> s;
+
     for (int i = 0; i < 2; i++) {
         s.push_back(new sphere());
 
@@ -34,12 +35,42 @@ int main()
         float m;
         cin >> m;
         s[i]->setMass(m);
-
     }
+    
+    vector <cube*> c;
+    for (int i = 0; i < 2; i++) {
 
+        c.push_back(new cube());
+        cout << "set radius for cube " << i + 1 << endl;
+        float Cr;
+        cin >> Cr;
+        c[i]->setRadius(Cr);
+
+        cout << "enter position (x, y, z) for cube " << i + 1 << endl;
+        float c_Px, c_Py, c_Pz;
+        cin >> c_Px >> c_Py >> c_Pz;
+        c[i]->setPosition(Vector3(c_Px, c_Py, c_Pz));
+
+        if (c_Py < Cr) {
+            return 0;
+        }
+
+        cout << "enter acceleration (x, z) for cube " << i + 1 << endl;
+        float Cx, Cz;
+        cin >> Cx >> Cz;
+        c[i]->setAcceleration(Vector3(Cx, 9.81, Cz));
+
+        cout << "set mass for cube " << i + 1 << endl;
+        float Cm;
+        cin >> Cm;
+        c[i]->setMass(Cm);
+    }
+    
     simulation sim;
-    sim.setS1(s[0]);
-    sim.setS2(s[1]);
+    for (int i = 0; i < 2; i++) {
+        sim.addSphere(*s[i]);
+        sim.addCube(*c[i]);
+    }
     sim.run_sim();
     sim.~simulation();
 }
